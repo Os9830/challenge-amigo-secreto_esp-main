@@ -12,3 +12,13 @@ Validar entrada: Si el campo de texto está vacío, el programa mostrará una al
 Visualizar la lista: Los nombres ingresados aparecerán en una lista debajo del campo de entrada.
 
 Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
+
+### TAREAS REALIZADAS
+
+[]Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
+
+[]Validar la entrada: Implementar una validación para asegurarse de que el campo no esté vacío. Si está vacío, mostrar un alert con un mensaje de error: "Por favor, inserte un nombre."
+
+[]Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
+
+[]Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
