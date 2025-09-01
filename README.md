@@ -34,3 +34,12 @@ El usuario deberá agregar nombres mediante un campo de texto y un botón "Adici
 [x]Iterar sobre el arreglo: Usa un bucle for para recorrer el arreglo amigos y crear elementos de lista (<li>) para cada título.
 
 [x]Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.
+
+//TAREAS TARJETA 3
+[x]Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
+
+[x]Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice aleatorio del arreglo.
+
+[x]Obtener el nombre sorteado: Utilizar el índice aleatorio para acceder al nombre correspondiente en el arreglo.
+
+[x]Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando document.getElementById()  e innerHTML para mostrar el amigo sorteado.
