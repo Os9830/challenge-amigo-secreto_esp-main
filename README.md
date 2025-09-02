@@ -1,45 +1,47 @@
-# Challenge Amigo Secreto (Español)
+# Challenge Amigo Secreto 
 
-Este proyecto es una aplicación para organizar un juego de **Amigo Secreto** de manera sencilla y eficiente.
+Este proyecto es una aplicación sencilla para organizar un juego de **Amigo Secreto** de forma rápida y eficiente.
 
-El usuario deberá agregar nombres mediante un campo de texto y un botón "Adicionar". Los nombres ingresados se mostrarán en una lista visible en la página, y al finalizar, un botón "Sortear Amigo" seleccionará uno de los nombres de forma aleatoria, mostrando el resultado en pantalla.
+Los usuarios pueden agregar nombres a una lista y, al finalizar, realizar un sorteo aleatorio para descubrir quién será su "amigo secreto".
 
-## Fucionalidades:
--Agregar nombres: Los usuarios escribirán el nombre de un amigo en un campo de texto y lo agregarán a una lista visible al hacer clic en "Adicionar".
+---
 
--Validar entrada: Si el campo de texto está vacío, el programa mostrará una alerta pidiendo un nombre válido.
+## Funcionalidades
 
--Visualizar la lista: Los nombres ingresados aparecerán en una lista debajo del campo de entrada.
+- **Agregar nombres**: Los usuarios pueden escribir un nombre en un campo de texto y añadirlo a la lista con el botón **"Adicionar"**.  
+- **Validar entrada**: Si el campo está vacío, el sistema mostrará una alerta solicitando un nombre válido.  
+- **Visualizar la lista**: Los nombres ingresados se muestran en una lista debajo del campo de entrada.  
+- **Sorteo aleatorio**: Con el botón **"Sortear Amigo"**, se selecciona aleatoriamente un nombre de la lista y se muestra en pantalla.  
 
--Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
+---
 
-### TAREAS REALIZADAS
+## Tareas implementadas
 
-//TAREAS TARJETA 1
+### Captura y validación de entradas
+- [x] Capturar el valor del campo de entrada con `getElementById` o `querySelector`.  
+- [x] Validar que el campo no esté vacío y mostrar un mensaje si lo está.  
+- [x] Agregar el nombre válido a un arreglo con `.push()`.  
+- [x] Limpiar el campo de entrada después de agregar un nombre.  
 
-[x]Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
+### Visualización de la lista
+- [x] Obtener el elemento donde se mostrará la lista.  
+- [x] Limpiar la lista existente antes de actualizarla.  
+- [x] Iterar sobre el arreglo de amigos para generar elementos `<li>`.  
+- [x] Renderizar la lista en el DOM.  
 
-[x]Validar la entrada: Implementar una validación para asegurarse de que el campo no esté vacío. Si está vacío, mostrar un alert con un mensaje de error: "Por favor, inserte un nombre."
+### Sorteo aleatorio
+- [x] Validar que existan amigos en la lista antes de sortear.  
+- [x] Generar un índice aleatorio con `Math.random()` y `Math.floor()`.  
+- [x] Obtener el nombre correspondiente al índice generado.  
+- [x] Mostrar el resultado en pantalla con `innerHTML`.  
 
-[x]Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
+---
 
-[x]Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
+## Tecnologías utilizadas
+- **HTML**  
+- **CSS**  
+- **JavaScript (DOM, arrays, eventos)**  
 
-//TAREAS TARJETA 2
+---
 
-[x]Obtener el elemento de la lista: Utilizar document.getElementById() o document.querySelector() para seleccionar la lista donde se mostrarán los amigos.
-
-[x]Limpiar la lista existente: Establecer lista.innerHTML = "" para asegurarse de que no haya duplicados al actualizar.
-
-[x]Iterar sobre el arreglo: Usa un bucle for para recorrer el arreglo amigos y crear elementos de lista (<li>) para cada título.
-
-[x]Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.
-
-//TAREAS TARJETA 3
-[x]Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
-
-[x]Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice aleatorio del arreglo.
-
-[x]Obtener el nombre sorteado: Utilizar el índice aleatorio para acceder al nombre correspondiente en el arreglo.
-
-[x]Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando document.getElementById()  e innerHTML para mostrar el amigo sorteado.
+Desarrollado como parte deL **Challenge Amigo Secreto**.  
