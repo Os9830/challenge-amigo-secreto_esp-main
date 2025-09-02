@@ -1,53 +1,65 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-let nombres_Amigos = [];
 
-limpiar_Campo = () =>  
+// Array para almacenar los nombres de los amigos.
+let nombresAmigos = [];
+
+// Obtenemos los elementos del HTML una sola vez para mejorar el rendimiento.
+const campoAmigo = document.getElementById('amigo');
+const listaHTML = document.getElementById("listaAmigos");
+
+const limpiarCampo = () => 
 {
-    document.getElementById('amigo').value = '';
+    campoAmigo.value = '';
 }
 
-agregarAmigo = (nombres) =>
+const agregarAmigo = () => 
 {
-    nombres = document.getElementById('amigo').value;
-    if( nombres != '')
+    // Usamos .trim() para eliminar espacios en blanco al inicio y al final.
+    const nombre = campoAmigo.value.trim();
+
+    if (nombre === '') 
     {
-        nombres_Amigos.push(nombres);
-        limpiar_Campo();
-        actualizarLista();
+        alert("Por favor, inserta un nombre.");
+        return; 
     }
-    else
+
+    // Verificamos si el nombre ya existe en la lista.
+    if (nombresAmigos.includes(nombre)) 
     {
-        alert("Por favor, inserte un nombre.");
+        alert("Este nombre ya ha sido agregado. Intenta con otro.");
+        limpiarCampo();
+        return; 
     }
+
+    nombresAmigos.push(nombre);
+    limpiarCampo();
+    actualizarLista();
 }
 
-actualizarLista = () => 
+const actualizarLista = () => 
 {
-    const lista = document.getElementById("listaAmigos"); 
-    lista.innerHTML = ""; 
+    listaHTML.innerHTML = ""; 
 
-    for (let i = 0; i < nombres_Amigos.length; i++) 
-    { 
-        const li = document.createElement("li"); 
-        li.textContent = nombres_Amigos[i];
-        lista.appendChild(li); 
-    }
-}
-
-sortearAmigo = () =>
-{
-    if (nombres_Amigos.length > 0) 
+    //Uso de forEach para recorrer la lista de amigos y creacion de elementos li.
+    nombresAmigos.forEach(nombre => 
     {
-        const indiceAleatorio = Math.floor(Math.random() * nombres_Amigos.length);
-        const amigoSeleccionado = nombres_Amigos[indiceAleatorio];
-        const lista = document.getElementById("listaAmigos"); 
-        lista.innerHTML = ""; 
         const li = document.createElement("li");
-        li.textContent = `El amigo secreto es: ${amigoSeleccionado}`;
-        lista.appendChild(li);
-    }
-    else
+        li.textContent = nombre;
+        listaHTML.appendChild(li);
+    });
+}
+
+const sortearAmigo = () => 
+{
+    // Verificamos que haya suficientes amigos para un sorteo.
+    if (nombresAmigos.length < 2) 
     {
-        alert("No hay amigos en la lista.");
+        alert("Necesitas al menos 2 amigos en la lista para poder  realizar el sorteo.");
+        return;
     }
+
+    const indiceAleatorio = Math.floor(Math.random() * nombresAmigos.length);
+    const amigoSeleccionado = nombresAmigos[indiceAleatorio];
+
+    listaHTML.innerHTML = `<li>El amigo secreto es: <strong>${amigoSeleccionado}</strong></li>`;
 }
